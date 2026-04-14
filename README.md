@@ -18,7 +18,7 @@ The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC)
 |------|------|--------|
 | 1. Genome Annotation | Bakta | `scripts/01_bakta_annotation.sh` |
 | 2. Pangenome Analysis | Panaroo | |
-| 3. Recombination Filtering | Gubbins | |
+| 3. Recombination Removal | Gubbins | |
 | 4. Population Structure | fastBAPS | |
 
 ---
