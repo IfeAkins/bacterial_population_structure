@@ -34,4 +34,4 @@ for file in "${GENOME_DIR}"/*.fasta.gz; do
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Finished: ${base}"
 done
 
-echo "All done. Logs in ${LOG_DIR}/"
+echo "All done"
