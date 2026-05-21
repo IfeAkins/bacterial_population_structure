@@ -1,25 +1,24 @@
 #!/usr/bin/env bash
-# =============================================================================
+
 # bakta_annotation.sh
-# Annotate E. coli genomes using Bakta
+# genome annotation for Escherchia coli
 # Usage: bash bakta_annotation.sh
-# =============================================================================
 
 set -euo pipefail #stops on any error
 
-# --- Directories -------------------------------------------------------------
+# --- Directories ---
 GENOME_DIR="genomes"
 OUTPUT_DIR="bakta_out"
 LOG_DIR="logs"
-DB="db_bakta"
+DB="/data/ghru/databases/bakta_db/v5/db"
 THREADS=8
 
-# --- Setup -------------------------------------------------------------------
+# --- Setup ---
 mkdir -p "${LOG_DIR}"
 
-# --- Run Bakta ---------------------------------------------------------------
-for file in "${GENOME_DIR}"/*.fasta.gz; do
-    base=$(basename "$file" .fasta.gz)
+# --- Run Bakta ---
+for file in "${GENOME_DIR}"/*.fasta; do
+    base=$(basename "$file" .fasta)
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Running Bakta on: ${base}"
 
     bakta "$file" \
