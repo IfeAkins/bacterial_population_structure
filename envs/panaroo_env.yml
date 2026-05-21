@@ -1,4 +1,4 @@
-name: panaroo_env
+name: degain_panaroo
 channels:
   - conda-forge
   - bioconda

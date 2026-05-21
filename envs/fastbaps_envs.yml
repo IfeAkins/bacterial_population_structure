@@ -1,4 +1,4 @@
-name: fastbaps_env
+name: degain_fastbaps
 channels:
   - conda-forge
   - bioconda

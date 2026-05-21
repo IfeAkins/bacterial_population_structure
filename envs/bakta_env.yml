@@ -1,4 +1,4 @@
-name: bakta_env
+name: degain_bakta
 channels:
   - conda-forge
   - bioconda
