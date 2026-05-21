@@ -4,4 +4,4 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - panaroo=1.6.1
+  - panaroo=1.6.0
