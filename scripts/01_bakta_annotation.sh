@@ -2,7 +2,7 @@
 
 # bakta_annotation.sh
 # genome annotation for Escherchia coli
-# Usage: bash bakta_annotation.sh
+# Usage: bash 01_bakta_annotation.sh
 
 set -euo pipefail #stops on any error
 
