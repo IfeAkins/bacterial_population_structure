@@ -1,12 +1,12 @@
-# Bacterial Population Structure Pipeline
+# Bacterial Population Structure
 
-A step-by-step workflow for inferring population structure from bacterial genomes using genome annotation, pangenome analysis, recombination filtering, and Bayesian clustering.
+A workflow to infer population structure from bacterial genomes using genome annotation, pangenome analysis, and Bayesian clustering.
 
 ---
 
 ## Overview
 
-This pipeline takes assembled bacterial genomes through annotation, pangenome analysis, recombination removal, and Bayesian population structure inference.
+This pipeline input file is assembled bacterial genomes to carry out annotation, pangenome analysis, and Bayesian population structure inference.
 
 The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC) genomes downloaded from [Enterobase](https://enterobase.warwick.ac.uk/).
 
@@ -18,28 +18,50 @@ The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC)
 |------|------|--------|
 | 1. Genome Annotation | Bakta | `scripts/01_bakta_annotation.sh` |
 | 2. Pangenome Analysis | Panaroo | |
-| 3. Recombination Removal | Gubbins | |
-| 4. Population Structure | fastBAPS | |
+| 3. Population Structure | fastBAPS | |
 
 ---
 
 ## Requirements
 
-### Bakta
+Conda environment yml files are provided in `envs/`. To create each environment:
+
 ```bash
-conda create -n bakta -c conda-forge -c bioconda bakta
-conda activate bakta
+conda env create -f envs/bakta_env.yml
+conda env create -f envs/panaroo_env.yml
+conda env create -f envs/fastbaps_env.yml
 ```
-See [Bakta GitHub](https://github.com/oschwengers/bakta) for database setup.
+
+- [Bakta GitHub](https://github.com/oschwengers/bakta) — see database setup instructions
+- [Panaroo GitHub](https://github.com/gtonkinhill/panaroo)
+- [fastBAPS GitHub](https://github.com/gtonkinhill/fastbaps)
+
+---
+
+## Step 1: Genome Annotation (Bakta)
+
+### Database setup
+Follow instructions at [https://github.com/oschwengers/bakta](https://github.com/oschwengers/bakta) to download the database into `db_bakta/`.
 
 ### Run
-
 ```bash
-conda activate bakta
+conda activate bakta_env
 bash scripts/01_bakta_annotation.sh
 ```
 
 Annotates all `.fasta.gz` files in `genomes/`, writing output to `bakta_out/` and logs to `logs/`.
+
+---
+
+## Step 2: Pangenome Analysis (Panaroo)
+
+*Script coming soon*
+
+---
+
+## Step 3: Population Structure (fastBAPS)
+
+*Script coming soon*
 
 ---
 
