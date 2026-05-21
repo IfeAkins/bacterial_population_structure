@@ -2,11 +2,6 @@
 
 A workflow to infer population structure from bacterial genomes using genome annotation, pangenome analysis, and Bayesian clustering.
 
-
-## Overview
-
-This pipeline input file is assembled bacterial genomes to carry out annotation, pangenome analysis, and Bayesian population structure inference.
-
 The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC) genomes downloaded from [Enterobase](https://enterobase.warwick.ac.uk/).
 
 
@@ -41,7 +36,7 @@ Follow instructions at [https://github.com/oschwengers/bakta](https://github.com
 
 ### Run
 ```bash
-conda activate bakta_env
+conda activate degain_bakta
 bash scripts/01_bakta_annotation.sh
 ```
 
