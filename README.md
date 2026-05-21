@@ -2,7 +2,6 @@
 
 A workflow to infer population structure from bacterial genomes using genome annotation, pangenome analysis, and Bayesian clustering.
 
----
 
 ## Overview
 
@@ -10,7 +9,6 @@ This pipeline input file is assembled bacterial genomes to carry out annotation,
 
 The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC) genomes downloaded from [Enterobase](https://enterobase.warwick.ac.uk/).
 
----
 
 ## Workflow
 
@@ -20,7 +18,6 @@ The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC)
 | 2. Pangenome Analysis | Panaroo | |
 | 3. Population Structure | fastBAPS | |
 
----
 
 ## Requirements
 
@@ -36,7 +33,6 @@ conda env create -f envs/fastbaps_env.yml
 - [Panaroo GitHub](https://github.com/gtonkinhill/panaroo)
 - [fastBAPS GitHub](https://github.com/gtonkinhill/fastbaps)
 
----
 
 ## Step 1: Genome Annotation (Bakta)
 
@@ -51,25 +47,17 @@ bash scripts/01_bakta_annotation.sh
 
 Annotates all `.fasta.gz` files in `genomes/`, writing output to `bakta_out/` and logs to `logs/`.
 
----
 
 ## Step 2: Pangenome Analysis (Panaroo)
 
-*Script coming soon*
-
----
 
 ## Step 3: Population Structure (fastBAPS)
 
-*Script coming soon*
-
----
 
 ## Example Dataset
 
 Genomes used in this example were downloaded from [Enterobase](https://enterobase.warwick.ac.uk/) and represent diarrheagenic *Escherichia coli* (DEC) pathotypes.
 
----
 
 ## License
 
