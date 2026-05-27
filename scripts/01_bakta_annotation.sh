@@ -10,7 +10,7 @@ set -euo pipefail #stops on any error
 GENOME_DIR="genomes"
 OUTPUT_DIR="bakta_out"
 LOG_DIR="logs"
-DB="/data/ghru/databases/bakta_db/v5/db"
+DB="db-light"
 THREADS=8
 
 # --- Setup ---
