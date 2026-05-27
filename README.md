@@ -10,7 +10,7 @@ The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC)
 | Step | Tool | Script |
 |------|------|--------|
 | 1. Genome Annotation | Bakta | `scripts/01_bakta_annotation.sh` |
-| 2. Pangenome Analysis | Panaroo | |
+| 2. Pangenome Analysis | Panaroo |'scripts/02_panaroo_pangenome.sh' |
 | 3. Population Structure | fastBAPS | |
 
 
@@ -49,7 +49,7 @@ Annotates all `.fasta` files in `genomes/`, writing output to `bakta_out/` and l
 
 ```bash
 conda activate degain_panaroo
-bash scripts/02_panaroo_analysis.sh
+bash scripts/02_panaroo_pangenome.sh
 ```
 
 The script automatically generates a list of all GFF3 files in `bakta_out/` and runs Panaroo with the following settings:
