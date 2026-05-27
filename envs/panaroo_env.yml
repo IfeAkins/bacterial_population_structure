@@ -5,3 +5,4 @@ channels:
   - defaults
 dependencies:
   - panaroo=1.6.0
+  - biopython=1.83
