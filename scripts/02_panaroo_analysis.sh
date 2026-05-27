@@ -1,31 +1,27 @@
 #!/usr/bin/env bash
 # Pangenome analysis using Panaroo
-# Usage: bash scripts/02_panaroo_analysis.sh
-# NOTE: Set paths to match your system
+# Usage: bash 02_panaroo_analysis.sh
+# NOTE: Set paths to match your dataset location in your system
 
+# stops script on error, undefined variable or pipeline failure
 set -euo pipefail
 
+#for non-standard GFF3 files, profile the input file as a list in a text file https://gthlab.au/panaroo/#/gettingstarted/quickstart
+ls bakta_output/*/*.gff3 > gff3_input.txt
+
 #Directories 
-BAKTA_DIR="bakta_out"
-GENOMES_ID="genomes_ID.txt"
 OUTPUT_DIR="panaroo_out"
 LOG_DIR="panaroo_logs"
 THREADS=8
 
-#create directories
+#create log directory
 mkdir -p "${LOG_DIR}"
-
-#GFF3 files
-GFF_FILES=""
-for id in $(cat "${GENOMES_ID}"); do
-    GFF_FILES="${GFF_FILES} ${BAKTA_DIR}/${id}/${id}.gff3"
-done
 
 #panaroo analysis
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting Panaroo pangenome analysis"
 
 panaroo \
-    -i ${GFF_FILES} \
+    -i gff3_input.txt \
     -o "${OUTPUT_DIR}" \
     --clean-mode sensitive \
     --remove-invalid-genes \
