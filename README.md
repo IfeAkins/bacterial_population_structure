@@ -40,19 +40,41 @@ conda activate degain_bakta
 bash scripts/01_bakta_annotation.sh
 ```
 
-Annotates all `.fasta.gz` files in `genomes/`, writing output to `bakta_out/` and logs to `logs/`.
+Annotates all `.fasta` files in `genomes/`, writing output to `bakta_out/` and logs to `logs/`.
 
 
 ## Step 2: Pangenome Analysis (Panaroo)
 
+### Install environment
+
+```bash
+conda env create -f envs/panaroo_env.yml
+conda activate degain_panaroo
+```
+
+> **Note:** Biopython 1.83 is required. Versions ≥1.85 break Panaroo's GFF3 parser when using Bakta-annotated files.
+
+### Run
+
+```bash
+bash scripts/02_panaroo_analysis.sh
+```
+
+The script automatically generates a list of all GFF3 files in `bakta_out/` and runs Panaroo with the following settings:
+
+- `--clean-mode sensitive` — recommended for diverse datasets with mixed pathotypes
+- `--remove-invalid-genes` — required for Bakta GFF3 compatibility
+- `-a core` — generates core genome alignment for downstream population structure analysis
+- `--core_threshold 0.95` — genes present in ≥95% of genomes are classified as core
+
+Output is written to `panaroo_out/`. The key output for downstream analysis is `panaroo_out/core_gene_alignment.aln`.
 
 ## Step 3: Population Structure (fastBAPS)
 
 
 ## Example Dataset
 
-Genomes used in this example were downloaded from [Enterobase](https://enterobase.warwick.ac.uk/) and represent diarrheagenic *Escherichia coli* (DEC) pathotypes.
-
+Genomes used in this example were downloaded from Enterobase and represent diarrheagenic Escherichia coli (DEC) pathotypes.
 
 ## License
 
