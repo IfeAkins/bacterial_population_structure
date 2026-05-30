@@ -10,8 +10,8 @@ The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC)
 | Step | Tool | Script |
 |------|------|--------|
 | 1. Genome Annotation | Bakta | `scripts/01_bakta_annotation.sh` |
-| 2. Pangenome Analysis | Panaroo |'scripts/02_panaroo_pangenome.sh' |
-| 3. Population Structure | fastBAPS | |
+| 2. Pangenome Analysis | Panaroo | `scripts/02_panaroo_pangenome.sh` |
+| 3. Population Structure | fastBAPS | `scripts/03_fastbaps.R` |
 
 
 ## Requirements
@@ -24,7 +24,7 @@ conda env create -f envs/panaroo_env.yml
 conda env create -f envs/fastbaps_env.yml
 ```
 
-- [Bakta GitHub](https://github.com/oschwengers/bakta) — see database setup instructions
+- [Bakta GitHub](https://github.com/oschwengers/bakta) (see database setup instructions)
 - [Panaroo GitHub](https://github.com/gtonkinhill/panaroo)
 - [fastBAPS GitHub](https://github.com/gtonkinhill/fastbaps)
 
@@ -72,9 +72,9 @@ Rscript scripts/03_fastbaps.R
 
 Input file is the core genome alignment from Panaroo (`panaroo_out/core_gene_alignment.aln`).
 
-- 'optimise_prior("optimise.symmetric") was used
+- `optimise_prior(`optimise.symmetric"`` was used
 
-Output is written in 'fastbaps_out/', the result file is 'fastbaps_clusters.csv', it shows 2 levels.
+Output is written in `fastbaps_out/`, the result is saved as `fastbaps_clusters.csv`, it shows 2 levels.
 
 ## Example Dataset
 
@@ -83,3 +83,23 @@ Genomes used in this example were downloaded from Enterobase and represent diarr
 ## License
 
 MIT
+
+## Acknowledgements
+
+We thank the developers of Bakta, Panaroo, and fastBAPS for making their software openly available. Users of this pipeline should cite the original tools when publishing results.
+
+## Citations
+
+If you use this pipeline, please cite the following tools:
+
+**Bakta**
+Schwengers O, Jelonek L, Dieckmann MA, Beyvers S, Blom J, Goesmann A. (2021). Bakta: rapid and standardized annotation of bacterial genomes via a comprehensive database. *Microbial Genomics* 7(11).
+DOI: [10.1099/mgen.0.000685](https://doi.org/10.1099/mgen.0.000685)
+
+**Panaroo**
+Tonkin-Hill G, MacAlasdair N, Ruis C, Weimann A, Horesh G, Lees JA, Croucher NJ, Carter R, Flasche S, Parkhill J, Bentley SD, Corander J, Coll F. (2020). Producing polished prokaryotic pangenomes with the Panaroo pipeline. *Genome Biology* 21(180).
+DOI: [10.1186/s13059-020-02090-4](https://doi.org/10.1186/s13059-020-02090-4)
+
+**fastBAPS**
+Tonkin-Hill G, Lees JA, Bentley SD, Parkhill J, Corander J. (2019). Fast hierarchical Bayesian analysis of population structure. *Wellcome Open Research* 4(69).
+DOI: [10.12688/wellcomeopenres.15061.1](https://doi.org/10.12688/wellcomeopenres.15061.1)
