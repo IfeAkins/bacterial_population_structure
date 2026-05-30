@@ -72,17 +72,13 @@ Rscript scripts/03_fastbaps.R
 
 Input file is the core genome alignment from Panaroo (`panaroo_out/core_gene_alignment.aln`).
 
-- `optimise_prior(`optimise.symmetric"`` was used
+- `optimise_prior(`optimise.symmetric`)` was used
 
 Output is written in `fastbaps_out/`, the result is saved as `fastbaps_clusters.csv`, it shows 2 levels.
 
 ## Example Dataset
 
 Genomes used in this example were downloaded from Enterobase and represent diarrheagenic Escherichia coli (DEC) pathotypes.
-
-## License
-
-MIT
 
 ## Acknowledgements
 
