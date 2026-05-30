@@ -63,6 +63,18 @@ Output is written to `panaroo_out/`. The key output for downstream analysis is `
 
 ## Step 3: Population Structure (fastBAPS)
 
+### Run
+
+```bash
+conda activate degain_fastbaps
+Rscript scripts/03_fastbaps.R
+```
+
+Input file is the core genome alignment from Panaroo (`panaroo_out/core_gene_alignment.aln`).
+
+- 'optimise_prior("optimise.symmetric") was used
+
+Output is written in 'fastbaps_out/', the result file is 'fastbaps_clusters.csv', it shows 2 levels.
 
 ## Example Dataset
 
