@@ -1,3 +1,5 @@
 genomes/         #directory for all the assembled files
 bakta_out/       #the output file
 db_bakta/        #the downloaded bakta database
+panaroo_out/     #panaroo output file
+fastbaps_out/    #fastbaps output file
