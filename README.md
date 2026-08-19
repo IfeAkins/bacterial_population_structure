@@ -2,7 +2,6 @@
 
 A workflow to infer population structure from bacterial genomes using genome annotation, pangenome analysis, and Bayesian clustering.
 
-The example dataset used here consists of diarrheagenic *Escherichia coli* (DEC) genomes downloaded from [Enterobase](https://enterobase.warwick.ac.uk/).
 
 
 ## Workflow
@@ -76,9 +75,7 @@ Input file is the core genome alignment from Panaroo (`panaroo_out/core_gene_ali
 
 Output is written in `fastbaps_out/`, the result is saved as `fastbaps_clusters.csv`, it shows 2 levels.
 
-## Example Dataset
 
-Genomes used in this example were downloaded from Enterobase and represent diarrheagenic Escherichia coli (DEC) pathotypes.
 
 ## Acknowledgements
 
